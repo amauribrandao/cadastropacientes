@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cadastros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereco</th>
+      <th>Cpf</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>Carteria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadastros.each do |cadastro| %>
+      <tr>
+        <td><%= cadastro.nome %></td>
+        <td><%= cadastro.endereco %></td>
+        <td><%= cadastro.cpf %></td>
+        <td><%= cadastro.telefone %></td>
+        <td><%= cadastro.email %></td>
+        <td><%= cadastro.carteria %></td>
+        <td><%= link_to 'Show', cadastro %></td>
+        <td><%= link_to 'Edit', edit_cadastro_path(cadastro) %></td>
+        <td><%= link_to 'Destroy', cadastro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cadastro', new_cadastro_path %>
